@@ -1,0 +1,10 @@
+{{ $dateTime := .PublishDate.Format "2006-01-02" }}
+{{ $dateFormat := .Site.Params.dateFormat | default "Jan 1, 2000" }}
+<article>
+    <header>
+        <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+        <p>Date: <time datetime="{{ $dateTime }}">{{ $dateFormat }}</time></p>
+    </header>
+    <summary>{{ .Summary }}</summary>
+    {{ .Content }}
+</article>
